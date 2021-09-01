@@ -1,7 +1,7 @@
 import React from 'react'
 import Cell from '../Cell/Cell'
 
-export default function Row({ x }) {
+export default function Row({ x, location, setLocation }) {
     const cells = []
 
     for (let y = 0; y < 11; y++) {
@@ -11,7 +11,7 @@ export default function Row({ x }) {
             )
         } else {
             cells.push(
-                <Cell key={y} location={{ x, y }} />
+                <Cell key={y} x={x} y={y} setLocation={setLocation} location={location} />
             )
         }
 
